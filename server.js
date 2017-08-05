@@ -21,11 +21,11 @@ app.get('/', function(request, response) {
 });
 
 app.get('/tables', function(request, response) {
-    response.sendFile(path.join(__dirname, 'tables.html'));
+    response.sendFile(path.join(__dirname, 'view.html'));
 });
 
 app.get('/reserve', function(request, response) {
-    response.sendFile(path.join(__dirname, 'reserve.html'));
+    response.sendFile(path.join(__dirname, 'reservations.html'));
 });
 
 
@@ -35,21 +35,20 @@ var tables = [];
 var waitlist = [];
 
 //Create new table reservations
-if (tables.length >= maxCapacity) {
-    app.post('/api/waitlist', function(request, response) {
-        var newTable = request.body;
-        waitlist.push(newTable);
-        response.json(waitlist);
-    });
-} else {
-   app.post('/api/table', function(request, response) {
-        var newTable = request.body;
-        tables.push(newTable);
-        response.json(tables);
-    }); 
-}
-    
 
+app.post('/api/waitlist', function(request, response) {
+    var newTable = request.body;
+    waitlist.push(newTable);
+    response.json(waitlist);
+});
+
+app.post('/api/table', function(request, response) {
+    var newTable = request.body;
+    tables.push(newTable);
+    response.json(tables);
+}); 
+
+    
 //Listen for PORT and Start Server
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
