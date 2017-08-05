@@ -53,10 +53,10 @@ app.post('/api/table', function(request, response) {
     var newTable = request.body;
     tables.push(newTable);
     response.json(tables);
-}); 
+});
 
-    
+
 //Listen for PORT and Start Server
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+    console.log("App listening on PORT " + PORT);
 });

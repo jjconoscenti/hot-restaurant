@@ -33,10 +33,10 @@
                         <div class="well">
                             <h2 id="name">Kanye</h2>
                             <div id="stats">
-                                <h3><strong>Name</strong> <span id="role">Kanye West</span></h3>
-                                <h3><strong>Phone #:</strong> <span id="age">900-900-9000</span></h3>
-                                <h3><strong>Email:</strong> <span id="force-points">kanye@gmail.com</span></h3>
-                                <h3><strong>Unique ID:</strong> <span id="force-points">1</span></h3>
+                                <h3><strong>Name</strong> <span id="name">Kanye West</span></h3>
+                                <h3><strong>Phone #:</strong> <span id="phone">900-900-9000</span></h3>
+                                <h3><strong>Email:</strong> <span id="email">kanye@gmail.com</span></h3>
+                                <h3><strong>Unique ID:</strong> <span id="unique_id">1</span></h3>
                             </div>
                         </div>
                     </div>
@@ -56,11 +56,11 @@
                 if (data) {
                     $("#stats").show();
                     $("#name").text(data.name);
-                    $("#role").text(data.role);
-                    $("#age").text(data.age);
-                    $("#force-points").text(data.forcePoints);
+                    $("#phone").text(data.phone);
+                    $("#email").text(data.email);
+                    $("#unqiue_id").text(data.unique_id);
                 } else {
-                    $("#name").text("The force is not strong with this one. Your character was not found.");
+                    $("#name").text("Customer could not be added.");
                     $("#stats").hide();
                 }
             });
