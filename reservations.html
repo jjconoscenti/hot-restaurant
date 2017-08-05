@@ -37,7 +37,7 @@
 
       <a href="view.html"><button type="button" class="btn btn-primary btn-lg" style=""><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
       
-      <a href="add.html"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+      <a href="add.html"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
 
     </div>
 
@@ -98,18 +98,18 @@
     // Question: What does this code do?
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
-      var newCharacter = {
+      var newReservation = {
         name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
+        phoneNumber: $("#phone-number").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueID: $("#unique-id").val().trim()
       };
 
       // Question: What does this code do??
-      $.post("/api/new", newCharacter)
+      $.post("/api/table", newCharacter)
       .done(function(data) {
         console.log(data);
-        alert("Adding character...");
+        alert("Adding new reservation");
       });
     });
   </script>
