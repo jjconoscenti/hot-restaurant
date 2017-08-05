@@ -35,9 +35,9 @@
 
       <hr>
 
-      <a href="view.html"><button type="button" class="btn btn-primary btn-lg" style=""><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+      <a href="/tables"><button type="button" class="btn btn-primary btn-lg" style=""><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
       
-      <a href="add.html"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
+      <a href="/reserve"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
 
     </div>
 
@@ -89,7 +89,7 @@
 		</div>
 		
 		<div>
-			<p><a href= "/api/tables">API Table Link</a> | <a href= "/api/waitlist">API Wait List</a></p>
+			<p><a href= "/api/table">API Table Link</a> | <a href= "/api/waitlist">API Wait List</a></p>
 		</div>
 
   </div> 
@@ -106,7 +106,7 @@
       };
 
       // Question: What does this code do??
-      $.post("/api/table", newCharacter)
+      $.post("/api/table", newReservation)
       .done(function(data) {
         console.log(data);
         alert("Adding new reservation");
