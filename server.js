@@ -9,6 +9,11 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
+var maxCapacity = 5;
+//Create empty array to store reserved tables
+var tables = [];
+var waitlist = [];
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,11 +33,13 @@ app.get('/reserve', function(request, response) {
     response.sendFile(path.join(__dirname, 'reservations.html'));
 });
 
+app.get('/api/table', function(request, response) {
+    response.json(tables);
+});
 
-var maxCapacity = 5;
-//Create empty array to store reserved tables
-var tables = [];
-var waitlist = [];
+app.get('/api/waitlist', function(request, response) {
+    response.json(waitlist);
+});
 
 //Create new table reservations
 
